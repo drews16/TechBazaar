@@ -1,0 +1,11 @@
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Domain\obj\Debug\net8.0\TechBazaar.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Domain\obj\Debug\net8.0\TechBazaar.Domain.AssemblyInfoInputs.cache
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Domain\obj\Debug\net8.0\TechBazaar.Domain.AssemblyInfo.cs
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Domain\obj\Debug\net8.0\TechBazaar.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Domain\bin\Debug\net8.0\TechBazaar.Domain.deps.json
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Domain\bin\Debug\net8.0\TechBazaar.Domain.dll
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Domain\bin\Debug\net8.0\TechBazaar.Domain.pdb
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Domain\obj\Debug\net8.0\TechBazaar.Domain.dll
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Domain\obj\Debug\net8.0\refint\TechBazaar.Domain.dll
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Domain\obj\Debug\net8.0\TechBazaar.Domain.pdb
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Domain\obj\Debug\net8.0\ref\TechBazaar.Domain.dll

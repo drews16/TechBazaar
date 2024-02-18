@@ -1,0 +1,17 @@
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Persistence\obj\Debug\net8.0\TechBazaar.Persistence.csproj.AssemblyReference.cache
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Persistence\obj\Debug\net8.0\TechBazaar.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Persistence\obj\Debug\net8.0\TechBazaar.Persistence.AssemblyInfoInputs.cache
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Persistence\obj\Debug\net8.0\TechBazaar.Persistence.AssemblyInfo.cs
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Persistence\obj\Debug\net8.0\TechBazaar.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Persistence\bin\Debug\net8.0\TechBazaar.Persistence.deps.json
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Persistence\bin\Debug\net8.0\TechBazaar.Persistence.runtimeconfig.json
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Persistence\bin\Debug\net8.0\TechBazaar.Persistence.dll
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Persistence\bin\Debug\net8.0\TechBazaar.Persistence.pdb
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Persistence\bin\Debug\net8.0\TechBazaar.Domain.dll
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Persistence\bin\Debug\net8.0\TechBazaar.Domain.pdb
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Persistence\obj\Debug\net8.0\TechBazaar.Persistence.csproj.CopyComplete
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Persistence\obj\Debug\net8.0\TechBazaar.Persistence.dll
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Persistence\obj\Debug\net8.0\refint\TechBazaar.Persistence.dll
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Persistence\obj\Debug\net8.0\TechBazaar.Persistence.pdb
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Persistence\obj\Debug\net8.0\TechBazaar.Persistence.genruntimeconfig.cache
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Persistence\obj\Debug\net8.0\ref\TechBazaar.Persistence.dll

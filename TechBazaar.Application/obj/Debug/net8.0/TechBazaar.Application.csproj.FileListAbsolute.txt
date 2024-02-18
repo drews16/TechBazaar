@@ -1,0 +1,17 @@
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Application\obj\Debug\net8.0\TechBazaar.Application.csproj.AssemblyReference.cache
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Application\obj\Debug\net8.0\TechBazaar.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Application\obj\Debug\net8.0\TechBazaar.Application.AssemblyInfoInputs.cache
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Application\obj\Debug\net8.0\TechBazaar.Application.AssemblyInfo.cs
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Application\obj\Debug\net8.0\TechBazaar.Application.csproj.CoreCompileInputs.cache
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Application\bin\Debug\net8.0\TechBazaar.Application.deps.json
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Application\bin\Debug\net8.0\TechBazaar.Application.dll
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Application\bin\Debug\net8.0\TechBazaar.Application.pdb
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Application\bin\Debug\net8.0\TechBazaar.Domain.dll
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Application\bin\Debug\net8.0\TechBazaar.Persistence.dll
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Application\bin\Debug\net8.0\TechBazaar.Persistence.pdb
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Application\bin\Debug\net8.0\TechBazaar.Domain.pdb
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Application\obj\Debug\net8.0\TechBazaar.Application.csproj.CopyComplete
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Application\obj\Debug\net8.0\TechBazaar.Application.dll
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Application\obj\Debug\net8.0\refint\TechBazaar.Application.dll
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Application\obj\Debug\net8.0\TechBazaar.Application.pdb
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Application\obj\Debug\net8.0\ref\TechBazaar.Application.dll

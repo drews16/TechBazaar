@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34601.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5A5487EE-3569-4653-8D99-6A1F2695A166}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{CADEC22D-6C72-41E5-82F3-F6188BA7272A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechBazaar.Domain", "TechBazaar.Domain\TechBazaar.Domain.csproj", "{D4530170-9051-49A2-AA0F-AF868B35275E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{A2A04E3B-8B03-472F-A0A7-343480320E36}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{494E244A-A982-4DC5-A6DF-BD62AFE10926}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechBazaar.Persistence", "TechBazaar.Persistence\TechBazaar.Persistence.csproj", "{77BA2E91-FC87-4F31-87F4-9C74EF648C06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechBazaar.API", "TechBazaar.API\TechBazaar.API.csproj", "{056D273A-6B02-4DFB-A85F-216338F5A196}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechBazaar.Application", "TechBazaar.Application\TechBazaar.Application.csproj", "{0C9D4541-6EBA-4C69-8BCA-E2B52FE6E22E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4530170-9051-49A2-AA0F-AF868B35275E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4530170-9051-49A2-AA0F-AF868B35275E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4530170-9051-49A2-AA0F-AF868B35275E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4530170-9051-49A2-AA0F-AF868B35275E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77BA2E91-FC87-4F31-87F4-9C74EF648C06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77BA2E91-FC87-4F31-87F4-9C74EF648C06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77BA2E91-FC87-4F31-87F4-9C74EF648C06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77BA2E91-FC87-4F31-87F4-9C74EF648C06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{056D273A-6B02-4DFB-A85F-216338F5A196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{056D273A-6B02-4DFB-A85F-216338F5A196}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{056D273A-6B02-4DFB-A85F-216338F5A196}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{056D273A-6B02-4DFB-A85F-216338F5A196}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C9D4541-6EBA-4C69-8BCA-E2B52FE6E22E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C9D4541-6EBA-4C69-8BCA-E2B52FE6E22E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C9D4541-6EBA-4C69-8BCA-E2B52FE6E22E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C9D4541-6EBA-4C69-8BCA-E2B52FE6E22E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CADEC22D-6C72-41E5-82F3-F6188BA7272A} = {5A5487EE-3569-4653-8D99-6A1F2695A166}
+		{D4530170-9051-49A2-AA0F-AF868B35275E} = {CADEC22D-6C72-41E5-82F3-F6188BA7272A}
+		{A2A04E3B-8B03-472F-A0A7-343480320E36} = {5A5487EE-3569-4653-8D99-6A1F2695A166}
+		{494E244A-A982-4DC5-A6DF-BD62AFE10926} = {5A5487EE-3569-4653-8D99-6A1F2695A166}
+		{77BA2E91-FC87-4F31-87F4-9C74EF648C06} = {A2A04E3B-8B03-472F-A0A7-343480320E36}
+		{056D273A-6B02-4DFB-A85F-216338F5A196} = {494E244A-A982-4DC5-A6DF-BD62AFE10926}
+		{0C9D4541-6EBA-4C69-8BCA-E2B52FE6E22E} = {CADEC22D-6C72-41E5-82F3-F6188BA7272A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A57BADD-9D74-4FC5-B41A-3EA09A4B367C}
+	EndGlobalSection
+EndGlobal
