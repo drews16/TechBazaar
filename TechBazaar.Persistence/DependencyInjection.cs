@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using TechBazaar.Domain.Entity;
 using TechBazaar.Domain.Interfaces.Repositories;
 using TechBazaar.Persistence.Database;
+using TechBazaar.Persistence.Interceptors;
 using TechBazaar.Persistence.Repositories;
 
 namespace TechBazaar.Persistence
@@ -18,14 +19,12 @@ namespace TechBazaar.Persistence
             //services.AddDbContext<ApplicationDbContext>(options =>
             //    options.UseNpgsql(configuration.GetConnectionString("PostgreSQL")));
 
-            //services.AddSingleton<DateInterceptor>();
+            services.AddSingleton<DateInterceptor>();
 
-            services.AddScoped<IBaseRepository<Brand>, BaseRepository<Brand>>();
             services.AddScoped<IBaseRepository<Product>, BaseRepository<Product>>();
             services.AddScoped<IBaseRepository<Category>, BaseRepository<Category>>();
-            services.AddScoped<IBaseRepository<ProductImage>, BaseRepository<ProductImage>>();
-            services.AddScoped<IBaseRepository<Specification>, BaseRepository<Specification>>();
-            services.AddScoped<IBaseRepository<SpecificationType>, BaseRepository<SpecificationType>>();
+            services.AddScoped<IBaseRepository<UserToken>, BaseRepository<UserToken>>();
+            services.AddScoped<IBaseRepository<User>, BaseRepository<User>>();
 
             return services;
         }

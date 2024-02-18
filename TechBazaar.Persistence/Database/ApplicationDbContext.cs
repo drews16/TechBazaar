@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Query.Internal;
 using System.Reflection;
 using TechBazaar.Domain.Entity;
+using TechBazaar.Persistence.Interceptors;
 
 namespace TechBazaar.Persistence.Database
 {
@@ -10,7 +11,12 @@ namespace TechBazaar.Persistence.Database
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         { }
-        
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.AddInterceptors(new DateInterceptor());
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());

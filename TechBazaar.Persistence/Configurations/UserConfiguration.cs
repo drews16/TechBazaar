@@ -23,9 +23,6 @@ namespace TechBazaar.Persistence.Configurations
                 .IsRequired();
             builder.Property(x => x.Password)
                 .IsRequired();
-            builder.Property(x => x.Phone)
-                .IsRequired()
-                .HasMaxLength(12);
             builder.Property(x => x.CartId)
                 .IsRequired();
 
