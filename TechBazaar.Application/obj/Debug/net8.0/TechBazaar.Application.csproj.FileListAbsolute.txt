@@ -15,3 +15,4 @@ C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Appl
 C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Application\obj\Debug\net8.0\refint\TechBazaar.Application.dll
 C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Application\obj\Debug\net8.0\TechBazaar.Application.pdb
 C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Application\obj\Debug\net8.0\ref\TechBazaar.Application.dll
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Application\obj\Debug\net8.0\TechBazaar.Application.sourcelink.json

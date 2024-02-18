@@ -15,3 +15,4 @@ C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Pers
 C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Persistence\obj\Debug\net8.0\TechBazaar.Persistence.pdb
 C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Persistence\obj\Debug\net8.0\TechBazaar.Persistence.genruntimeconfig.cache
 C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Persistence\obj\Debug\net8.0\ref\TechBazaar.Persistence.dll
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Persistence\obj\Debug\net8.0\TechBazaar.Persistence.sourcelink.json

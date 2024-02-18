@@ -155,3 +155,4 @@ C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.API\
 C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.API\bin\Debug\net8.0\Asp.Versioning.Http.dll
 C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.API\bin\Debug\net8.0\Asp.Versioning.Mvc.dll
 C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.API\bin\Debug\net8.0\Asp.Versioning.Mvc.ApiExplorer.dll
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.API\obj\Debug\net8.0\TechBazaar.API.sourcelink.json

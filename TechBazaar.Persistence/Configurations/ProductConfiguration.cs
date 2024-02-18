@@ -22,7 +22,7 @@ namespace TechBazaar.Persistence.Configurations
                 .IsRequired();
             builder.Property(x => x.CountPurchase)
                 .IsRequired();
-           builder.Property(x => x.AvailableQuantity)
+            builder.Property(x => x.AvailableQuantity)
                 .IsRequired();
 
             builder.HasOne(x => x.Category)

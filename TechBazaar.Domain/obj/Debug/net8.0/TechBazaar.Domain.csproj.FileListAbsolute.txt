@@ -9,3 +9,4 @@ C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Doma
 C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Domain\obj\Debug\net8.0\refint\TechBazaar.Domain.dll
 C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Domain\obj\Debug\net8.0\TechBazaar.Domain.pdb
 C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Domain\obj\Debug\net8.0\ref\TechBazaar.Domain.dll
+C:\Users\Андрей\Desktop\РАЗРАБОТКА\C#\TechBazaar\TechBazaar.Domain\obj\Debug\net8.0\TechBazaar.Domain.sourcelink.json
