@@ -11,6 +11,9 @@ namespace TechBazaar.Application
         {
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<ICartProductService, CartProductService>();
 
             services.AddSingleton<PasswordHasherHelper>();
 

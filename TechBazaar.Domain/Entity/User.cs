@@ -9,7 +9,6 @@ namespace TechBazaar.Domain.Entity
         public string LastName { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public long CartId { get; set; }
         public Cart Cart { get; set; }
         public UserToken UserToken { get; set; }
         public IEnumerable<Order> Orders { get; set; }

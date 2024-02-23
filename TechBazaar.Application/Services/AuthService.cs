@@ -1,33 +1,34 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Serilog;
-using TechBazaar.Domain.Dto.Token;
 using TechBazaar.Domain.Dto.User;
 using TechBazaar.Domain.Entity;
 using TechBazaar.Domain.Interfaces.Repositories;
 using TechBazaar.Domain.Interfaces.Services;
 using TechBazaar.Domain.Result;
-using TechBazaar.Domain.Extensions;
 using TechBazaar.Application.Helpers;
+using System.Security.Claims;
 
 namespace TechBazaar.Application.Services
 {
     public sealed class AuthService (
        IBaseRepository<User> userRepository,
-       IBaseRepository<UserToken> userTokenRepository,  
+       IBaseRepository<UserToken> userTokenRepository,
+       ITokenService tokenService,
        PasswordHasherHelper passwordHasher,
        ILogger logger): IAuthService
     {
-        public async Task<BaseResult<TokenDto>> Login(LoginUserDto dto)
+        public async Task<BaseResult<UserDto>> Login(LoginUserDto dto)
         {
             try
             {
                 var user = await userRepository
                     .GetAll()
+                    .Include(x => x.Cart)
                     .FirstOrDefaultAsync(x => x.Login == dto.Login);
 
                 if(user == null)
                 {
-                    return new BaseResult<TokenDto>
+                    return new BaseResult<UserDto>
                     {
                         ErrorMessage = "Пользователь не найден"
                     };
@@ -35,7 +36,7 @@ namespace TechBazaar.Application.Services
 
                 if (!passwordHasher.IsVerifyPassword(dto.Login, dto.Password, user.Password))
                 {
-                    return new BaseResult<TokenDto>
+                    return new BaseResult<UserDto>
                     {
                         ErrorMessage = "Неверный логин или пароль"
                     };
@@ -45,21 +46,35 @@ namespace TechBazaar.Application.Services
                     .GetAll()
                     .FirstOrDefaultAsync(x => x.UserId == user.Id);
 
-                if(userToken == null)
+                var claims = new List<Claim>
                 {
-                    userToken = new UserToken
-                    {
+                    new Claim(ClaimTypes.Name, user.Id.ToString()),
+                };
 
-                    };
-                }
+                var accessToken = tokenService.GenerateAccessToken(claims);
+                var refreshToken = tokenService.GenerateRefreshToken();
 
-                return null;
+                userToken.RefreshToken = refreshToken;
+                userToken.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
+               
+                await userTokenRepository.UpdateAsync(userToken); 
+
+                return new BaseResult<UserDto>
+                {
+                    Data = new UserDto
+                    ( 
+                        user.FirstName,
+                        accessToken,
+                        refreshToken,
+                        user.Cart.Id
+                    )
+                };
             }
             catch(Exception ex)
             {
                 logger.Error(ex, ex.Message);
 
-                return new BaseResult<TokenDto>
+                return new BaseResult<UserDto>
                 {
                     ErrorMessage = "Произошла внутреняя ошибка сервера"
                 };
@@ -80,6 +95,7 @@ namespace TechBazaar.Application.Services
             {
                 var user = await userRepository
                     .GetAll()
+                    .Include(x => x.Cart)
                     .FirstOrDefaultAsync(x => x.Login == dto.Login);
 
                 if(user != null)
@@ -101,9 +117,32 @@ namespace TechBazaar.Application.Services
 
                 await userRepository.InsertAsync(user);
 
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, user.Id.ToString()),
+                };
+
+                var accessToken = tokenService.GenerateAccessToken(claims);
+                var refreshToken = tokenService.GenerateRefreshToken();
+
+                var userToken = new UserToken
+                {
+                    UserId = user.Id,
+                    RefreshToken = refreshToken,
+                    RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7)
+                };
+
+                await userTokenRepository.InsertAsync(userToken);
+
                 return new BaseResult<UserDto>
                 {
-                    Data = user.ToDto()
+                    Data = new UserDto
+                    (
+                        user.FirstName,
+                        accessToken,
+                        refreshToken,
+                        user.Cart.Id
+                    )
                 };
             }
             catch(Exception ex)
@@ -117,4 +156,4 @@ namespace TechBazaar.Application.Services
             }
         }
     }
-}
+ }

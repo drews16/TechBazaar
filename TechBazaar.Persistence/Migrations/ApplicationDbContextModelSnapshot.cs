@@ -374,6 +374,9 @@ namespace TechBazaar.Persistence.Migrations
                     b.Property<long>("CartId")
                         .HasColumnType("bigint");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(20)
@@ -392,10 +395,8 @@ namespace TechBazaar.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasMaxLength(12)
-                        .HasColumnType("nvarchar(12)");
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -403,6 +404,33 @@ namespace TechBazaar.Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("TechBazaar.Domain.Entity.UserToken", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasColumnName("UserTokenId");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("RefreshToken")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RefreshTokenExpiryTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("UserTokens");
                 });
 
             modelBuilder.Entity("TechBazaar.Domain.Entity.CartProduct", b =>
@@ -542,6 +570,17 @@ namespace TechBazaar.Persistence.Migrations
                     b.Navigation("Cart");
                 });
 
+            modelBuilder.Entity("TechBazaar.Domain.Entity.UserToken", b =>
+                {
+                    b.HasOne("TechBazaar.Domain.Entity.User", "User")
+                        .WithOne("UserToken")
+                        .HasForeignKey("TechBazaar.Domain.Entity.UserToken", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("TechBazaar.Domain.Entity.Brand", b =>
                 {
                     b.Navigation("Products");
@@ -591,6 +630,8 @@ namespace TechBazaar.Persistence.Migrations
             modelBuilder.Entity("TechBazaar.Domain.Entity.User", b =>
                 {
                     b.Navigation("Orders");
+
+                    b.Navigation("UserToken");
                 });
 #pragma warning restore 612, 618
         }

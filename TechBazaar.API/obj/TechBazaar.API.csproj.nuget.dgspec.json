@@ -81,6 +81,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "yoomoney-api": {
+              "target": "Package",
+              "version": "[1.4.0, )"
             }
           },
           "imports": [

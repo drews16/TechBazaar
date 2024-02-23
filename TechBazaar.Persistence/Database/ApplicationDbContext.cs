@@ -33,6 +33,7 @@ namespace TechBazaar.Persistence.Database
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderProduct> OrderProducts { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<UserToken> UserTokens { get; set; }    
         public DbSet<CartProduct> CartProducts { get; set; }
         public DbSet<Cart> Carts { get; set; }
     }

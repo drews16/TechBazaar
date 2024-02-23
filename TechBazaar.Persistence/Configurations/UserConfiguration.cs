@@ -23,13 +23,6 @@ namespace TechBazaar.Persistence.Configurations
                 .IsRequired();
             builder.Property(x => x.Password)
                 .IsRequired();
-            builder.Property(x => x.CartId)
-                .IsRequired();
-
-            builder.HasOne(x => x.Cart)
-                .WithOne(x => x.User)
-                .HasForeignKey<User>(x => x.CartId);
-
         }
     }
 }

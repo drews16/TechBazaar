@@ -12,6 +12,7 @@ namespace TechBazaar.Persistence.Repositories
             return context
                 .Set<TEntity>()
                 .AsNoTracking();
+         
         }
 
         public async Task<TEntity> InsertAsync(TEntity entity)

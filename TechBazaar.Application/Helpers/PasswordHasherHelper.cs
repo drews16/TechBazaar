@@ -12,7 +12,7 @@ namespace TechBazaar.Application.Helpers
             return BitConverter.ToString(bytes);
         }
 
-        public bool IsVerifyPassword(string providedPassword, string providedLogin, string userPasswordHash)
+        public bool IsVerifyPassword(string providedLogin, string providedPassword, string userPasswordHash)
         {
             return HashPassword(providedLogin, providedPassword) == userPasswordHash;
         }

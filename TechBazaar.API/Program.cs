@@ -1,7 +1,11 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.CookiePolicy;
+using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.IdentityModel.Tokens;
 using Serilog;
+using System.IdentityModel.Tokens.Jwt;
 using System.Text;
+using TechBazaar.API.Middleware;
 using TechBazaar.Application;
 using TechBazaar.Persistence;
 
@@ -22,13 +26,24 @@ builder.Services.AddAuthentication(x =>
             (Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:Key"]!)),
         ValidateIssuer = true,
         ValidateAudience = true,
-        ValidateLifetime = true,
-        ValidateIssuerSigningKey = true
+        ValidateLifetime = true,       
+        ValidateIssuerSigningKey = true,
+        ClockSkew = TimeSpan.Zero
     };
 });
 builder.Services.AddAuthorization();
 
 builder.Services.AddControllers();
+
+builder.Services.AddCors(options => options.AddPolicy("CorsPolicy",
+    builder =>
+    {
+        builder
+            .WithOrigins("http://localhost:5173")
+            .AllowCredentials()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    }));
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -49,8 +64,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("CorsPolicy");
 app.UseHttpsRedirection();
-
+app.UseMiddleware<SetAccessTokenCookieMiddleware>(builder.Configuration);
 app.UseAuthentication();
 app.UseAuthorization();
 

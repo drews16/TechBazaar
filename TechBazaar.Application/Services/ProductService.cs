@@ -14,6 +14,54 @@ namespace TechBazaar.Application.Services
         IBaseRepository<Product> productRepository,
         ILogger logger) : IProductService
     {
+        public async Task<BaseResult<IEnumerable<ProductCatalogDto>>> GetBestSellingProducts(int count)
+        {
+            ProductCatalogDto[] products;
+            try
+            {
+                products = await productRepository
+                    .GetAll()
+                    .Take(count)
+                    .OrderByDescending(x => x.CountPurchase)
+                    .Include(x => x.Brand)
+                    .Include(x => x.Category)
+                    .Select(x => new ProductCatalogDto
+                    (
+                        x.Id,
+                        x.Brand.Name,
+                        x.Model,
+                        x.Category.Name,
+                        x.Price,
+                        x.MainImage,
+                        x.CountPurchase,
+                        x.AvailableQuantity
+                    ))
+                    .ToArrayAsync();
+            }
+            catch(Exception ex)
+            {
+                logger.Error(ex, ex.Message);
+
+                return new BaseResult<IEnumerable<ProductCatalogDto>>
+                {
+                    ErrorMessage = "Произошла внетренняя ошибка сервера"
+                };
+            }
+
+            if(!products.Any())
+            {
+                return new BaseResult<IEnumerable<ProductCatalogDto>>
+                {
+                    ErrorMessage = "Товары не найдены"
+                };
+            }
+
+            return new BaseResult<IEnumerable<ProductCatalogDto>>
+            {
+                Data = products
+            };
+        }
+
         public async Task<BaseResult<ProductDetailsDto>> GetProductDetailsAsync(long productId)
         {
             ProductDetailsDto? product;
@@ -71,7 +119,7 @@ namespace TechBazaar.Application.Services
             };
         }
 
-        public async Task<BaseResult<IEnumerable<ProductCatalogDto>>> GetProductsAsync(string category)
+        public async Task<BaseResult<IEnumerable<ProductCatalogDto>>> GetProductsAsync(string category, string orderByPrice, string orderByPopularity)
         {
             ProductCatalogDto[] products;
 
@@ -94,6 +142,24 @@ namespace TechBazaar.Application.Services
                         x.AvailableQuantity
                     ))
                     .ToArrayAsync();
+
+                if (!String.IsNullOrEmpty(orderByPrice))
+                {
+                    products = orderByPrice == "price_desc" ?
+                        products.OrderByDescending(x => x.Price)
+                        .ToArray()
+                        : products.OrderBy(x => x.Price)
+                        .ToArray();
+                }
+
+                if (!String.IsNullOrEmpty(orderByPopularity))
+                {
+                    products = orderByPopularity == "popularity_desc" ?
+                        products.OrderByDescending(x => x.CountPurchase)
+                        .ToArray() 
+                        : products.OrderBy(x => x.CountPurchase)
+                        .ToArray();
+                }
             }
             catch(Exception ex)
             {
