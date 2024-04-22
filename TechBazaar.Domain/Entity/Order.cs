@@ -12,6 +12,6 @@ namespace TechBazaar.Domain.Entity
         public decimal TotalPrice { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
-        public IEnumerable<OrderProduct> OrderProducts { get; set; }
+        public ICollection<OrderProduct> OrderProducts { get; set; }
     }
 }

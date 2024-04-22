@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Query.ExpressionTranslators.Internal;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
@@ -113,44 +112,5 @@ namespace TechBazaar.Application.Services
                 )
             };
         }
-
-        //public async  Task<BaseResult<TokenDto>> RefreshToken(TokenDto dto)
-        //{
-        //    string accessToken = dto.AccessToken;
-        //    string refreshToken = dto.RefreshToken;
-
-        //    var claimsPrincipal = GetPrincipalFromExpiredToken(accessToken);
-
-        //    var userId = Guid.Parse(claimsPrincipal.Identity?.Name);
-
-        //    var user = await userRepository
-        //        .GetAll()
-        //        .Include(x => x.UserToken)
-        //        .FirstOrDefaultAsync(x => x.Id == userId);
-
-        //    if (user == null || user.UserToken.RefreshToken != refreshToken 
-        //        || user.UserToken.RefreshTokenExpiryTime <= DateTime.UtcNow)
-        //    {
-        //        return new BaseResult<TokenDto>
-        //        { 
-        //            ErrorMessage = "Невалидный запрос от клиента"
-        //        };
-        //    }
-
-        //    var newAccessToken = GenerateAccessToken(claimsPrincipal.Claims);
-        //    var newRefreshToken = GenerateRefreshToken();
-
-        //    user.UserToken.RefreshToken = newRefreshToken;
-
-        //    await userRepository.UpdateAsync(user);
-
-        //    return new BaseResult<TokenDto>
-        //    {
-        //        Data = new TokenDto
-        //        {
-        //            AccessToken = newAccessToken
-        //        }
-        //    };
-        //}
     }
 }

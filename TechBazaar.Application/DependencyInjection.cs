@@ -14,6 +14,10 @@ namespace TechBazaar.Application
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<ICartProductService, CartProductService>();
+            services.AddScoped<ICartService, CartService>();
+            services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<ICityService, CityService>();
+            services.AddScoped<IOfficeService, OfficeService>();
 
             services.AddSingleton<PasswordHasherHelper>();
 

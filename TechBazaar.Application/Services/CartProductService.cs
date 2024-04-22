@@ -12,7 +12,7 @@ namespace TechBazaar.Application.Services
         IBaseRepository<CartProduct> cartProductRepository,
         ILogger logger) : ICartProductService
     {
-        public async Task<BaseResult<long>> AddProductInCart(long cartId, CreateCartProductDto dto)
+        public async Task<BaseResult<long>> AddCartProductAsync(long cartId, CreateCartProductDto dto)
         {
             CartProduct? cartProduct;
 
@@ -59,54 +59,36 @@ namespace TechBazaar.Application.Services
             }
         }
 
-        public async Task<BaseResult<IEnumerable<CartProductDto>>> GetCartProducts(long cartId)
+        public async Task<BaseResult<long>> RemoveCartProductAsync(long cartProductId)
         {
-            CartProductDto[] cartProducts;
-
             try
             {
-                cartProducts = await cartProductRepository
+                var cartProduct = await cartProductRepository
                     .GetAll()
-                    .Where(x => x.CartId == cartId)
-                    .Include(x => x.Product)
-                        .ThenInclude(x => x.Brand)
-                    .Include(x => x.Product)
-                        .ThenInclude(x => x.Category)
-                    .Select(x => new CartProductDto
-                    (
-                        x.Product.Id,
-                        x.Product.Brand.Name,
-                        x.Product.Model,
-                        x.Product.Category.Name,
-                        x.Product.Price,
-                        x.Product.MainImage,
-                        x.Product.AvailableQuantity,
-                        x.Count
-                    ))
-                    .ToArrayAsync();
-            }
-            catch(Exception ex)
-            {
-                logger.Error(ex, ex.Message);
+                    .FirstOrDefaultAsync(x => x.Id == cartProductId);
 
-                return new BaseResult<IEnumerable<CartProductDto>>
+                if(cartProduct == null)
                 {
-                    ErrorMessage = "Произошла внутрення ошибка сервера"
+                    return new BaseResult<long>
+                    {
+                        ErrorMessage = "Товар не найден"
+                    };
+                }
+
+                await cartProductRepository.RemoveAsync(cartProduct);
+
+                return new BaseResult<long>
+                { 
+                    Data = cartProduct.Id
                 };
             }
-
-            if(!cartProducts.Any())
+            catch (Exception ex)
             {
-                return new BaseResult<IEnumerable<CartProductDto>>
+                return new BaseResult<long>
                 {
-                    ErrorMessage = "Товары в корзине не найдены"
+                    ErrorMessage = "Произошла внутренняя ошибка сервера"
                 };
             }
-
-            return new BaseResult<IEnumerable<CartProductDto>>
-            {
-                Data = cartProducts
-            };
         }
     }
 }

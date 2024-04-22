@@ -11,13 +11,13 @@ namespace TechBazaar.API.Controllers
         ICartProductService cartProductService) : ControllerBase
     {
         [Authorize]
-        [HttpGet("{cartId:long}")]
-        public async Task<IActionResult> GetCartProducts(long cartId)
+        [HttpPost("{cartId:long}/create")]
+        public async Task<IActionResult> AddCartProduct(long cartId, CreateCartProductDto dto)
         {
             var response = await cartProductService
-                .GetCartProducts(cartId);
+                .AddCartProductAsync(cartId, dto);
 
-            if(!response.IsSuccess)
+            if (!response.IsSuccess)
             {
                 return BadRequest(response.ErrorMessage);
             }
@@ -26,13 +26,13 @@ namespace TechBazaar.API.Controllers
         }
 
         [Authorize]
-        [HttpPost("{cartId:long}/create")]
-        public async Task<IActionResult> AddProductInCart(long cartId, CreateCartProductDto dto)
+        [HttpDelete("{cartProductId:long}/remove")]
+        public async Task<IActionResult> RemoveCartProduct(long cartProductId)
         {
             var response = await cartProductService
-                .AddProductInCart(cartId, dto);
+                .RemoveCartProductAsync(cartProductId);
 
-            if (!response.IsSuccess)
+            if(!response.IsSuccess)
             {
                 return BadRequest(response.ErrorMessage);
             }

@@ -26,6 +26,9 @@ namespace TechBazaar.Persistence
             services.AddScoped<IBaseRepository<UserToken>, BaseRepository<UserToken>>();
             services.AddScoped<IBaseRepository<User>, BaseRepository<User>>();
             services.AddScoped<IBaseRepository<CartProduct>, BaseRepository<CartProduct>>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<ICityRepository, CityRepository>();
+            services.AddScoped<IOfficeRepository, OfficeRepository>();
 
             return services;
         }

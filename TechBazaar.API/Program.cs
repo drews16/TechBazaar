@@ -1,9 +1,6 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.CookiePolicy;
-using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.IdentityModel.Tokens;
 using Serilog;
-using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using TechBazaar.API.Middleware;
 using TechBazaar.Application;
@@ -56,7 +53,6 @@ builder.Services
     .AddApplication();
 
 var app = builder.Build();
-
 
 if (app.Environment.IsDevelopment())
 {

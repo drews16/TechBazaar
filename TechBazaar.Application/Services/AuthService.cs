@@ -17,7 +17,7 @@ namespace TechBazaar.Application.Services
        PasswordHasherHelper passwordHasher,
        ILogger logger): IAuthService
     {
-        public async Task<BaseResult<UserDto>> Login(LoginUserDto dto)
+        public async Task<BaseResult<UserDto>> LoginAsync(LoginUserDto dto)
         {
             try
             {
@@ -81,7 +81,7 @@ namespace TechBazaar.Application.Services
             }
         }
 
-        public async Task<BaseResult<UserDto>> Register(RegisterUserDto dto)
+        public async Task<BaseResult<UserDto>> RegisterAsync(RegisterUserDto dto)
         {
             if(dto.Password != dto.PasswordConfirm)
             {

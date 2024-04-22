@@ -1,7 +1,5 @@
-﻿using TechBazaar.Domain.Dto.Product;
-
-namespace TechBazaar.Domain.Dto.CartProduct
+﻿namespace TechBazaar.Domain.Dto.CartProduct
 {
-    public sealed record CartProductDto(long Id, string BrandName, string Model, string CategoryName, decimal Price,
+    public sealed record CartProductDto(long Id, long ProductId, string BrandName, string Model, string CategoryName, decimal Price,
         string MainImage, int AvailableQuantity, int Count);
 }

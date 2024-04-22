@@ -14,11 +14,11 @@ namespace TechBazaar.API.Controllers
         public async Task<IActionResult> Register([FromBody] RegisterUserDto dto)
         {
             var response = await authService
-                .Register(dto);
+                .RegisterAsync(dto);
 
-            if(!response.IsSuccess)
+            if (!response.IsSuccess)
             {
-                return BadRequest(response);
+                return BadRequest(response.ErrorMessage);
             }
 
             HttpContext.Response.Cookies.Append("AspNetCore.Application.Id", response.Data.AccessToken, new CookieOptions
@@ -43,11 +43,11 @@ namespace TechBazaar.API.Controllers
         public async Task<IActionResult> Login([FromBody] LoginUserDto dto)
         {
             var response = await authService
-                .Login(dto);
+                .LoginAsync(dto);
 
             if (!response.IsSuccess)
             {
-                return BadRequest(response);
+                return BadRequest(response.ErrorMessage);
             }
 
             HttpContext.Response.Cookies.Append("AspNetCore.Application.Id", response.Data.AccessToken, new CookieOptions

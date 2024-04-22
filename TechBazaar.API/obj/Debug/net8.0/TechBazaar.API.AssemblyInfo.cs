@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TechBazaar.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8a53375b209672d2fdd5de04e5decf13bee07ca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5a9ad2bc0cacd6773014fa21b79a97da40171662")]
 [assembly: System.Reflection.AssemblyProductAttribute("TechBazaar.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TechBazaar.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
